@@ -1,0 +1,48 @@
+{
+	"name": "comma",
+	"version": "1.0.0",
+	"description": "Comma is a project management system build with NodeJS, Express and <3",
+	"main": "app.js",
+	"scripts": {
+		"test": "nodemon app.js",
+		"dev": "nodemon app.js",
+		"start": "node app.js",
+		"build": "",
+		"sass:compile": "sass public/scss/main.scss:public/css/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pmvdbijl7/comma.git"
+	},
+	"keywords": [
+		"Comma",
+		"Project",
+		"Management",
+		"Management",
+		"System"
+	],
+	"author": "Patrick van der Bijl",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/pmvdbijl7/comma/issues"
+	},
+	"homepage": "https://github.com/pmvdbijl7/comma#readme",
+	"devDependencies": {
+		"nodemon": "^2.0.7",
+		"sass": "^1.32.8"
+	},
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"body-parser": "^1.19.0",
+		"cookie-parser": "^1.4.5",
+		"dotenv": "^8.2.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.1",
+		"joi": "^17.4.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.11.15",
+		"mongoose-unique-validator": "^2.0.3",
+		"multer": "^1.4.2",
+		"slug": "^4.0.3"
+	}
+}
