@@ -1,14 +1,19 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 require('dotenv/config');
+const verifyAuth = require('./controllers/verifyAuthController');
 
 // Get .env Variables
 const hostURL = process.env.URL;
 const hostPort = process.env.PORT || 8000;
 const dbConnection = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@gettingstarted.35frc.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+
+// Import Routes
+const authRoutes = require('./routes/authRoutes');
 
 // Set Template Engine
 app.set('view engine', 'ejs');
@@ -31,9 +36,12 @@ mongoose.connect(
 );
 
 // Get Home Page
-app.get('/', (req, res) => {
-	res.send('Home');
+app.get('/', verifyAuth, (req, res) => {
+	res.render('pages/home', { title: 'Home' });
 });
+
+// Route Middlewares
+app.use(authRoutes);
 
 // Show 404 Page if Page Doesn't Exists
 app.use((req, res, next) => {

@@ -1,0 +1,79 @@
+// Import All Variables
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: $background-color;
+	color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $title-color;
+}
+
+section {
+	padding: 1em 25px;
+}
+
+// Import Auth Styles
+@import './auth.scss';
+
+.form-group {
+	margin-bottom: 1.5em;
+	display: flex;
+	flex-direction: column;
+
+	label {
+		font-size: 11px;
+		margin-bottom: 5px;
+	}
+
+	input {
+		width: 100%;
+		height: 40px;
+		padding: 0 20px;
+		border: 1px solid $sub-background-color;
+		border-radius: 8px;
+		background-color: transparent;
+		color: $white;
+		outline: none;
+	}
+
+	textarea {
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 100px;
+		padding: 10px 20px;
+		border: 1px solid $sub-background-color;
+		border-radius: 8px;
+		background-color: transparent;
+		color: $white;
+		font-family: 'Open Sans', sans-serif;
+		outline: none;
+	}
+
+	button {
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		border: none;
+		border-radius: 8px;
+		background-color: $primary-color;
+		color: $white;
+		outline: none;
+		font-weight: 600;
+	}
+}

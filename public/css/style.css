@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #16161a;
+  color: #94a1b2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fffffe;
+}
+
+section {
+  padding: 1em 25px;
+}
+
+.auth-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 25px;
+}
+.auth-container img {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+}
+.auth-container h1 {
+  margin: 1em 0 1.5em 0;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border: 1px solid #242629;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fffffe;
+  outline: none;
+}
+.form-group textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 10px 20px;
+  border: 1px solid #242629;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fffffe;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+}
+.form-group button {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #7f5af0;
+  color: #fffffe;
+  outline: none;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style.css.map */
