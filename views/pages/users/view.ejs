@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../../partials/head') %>
+	</head>
+	<body>
+		<header><%- include('../../partials/header') %></header>
+
+		<main>
+			<section>
+				<h2>All Users</h2>
+
+				<ul>
+					<% users.forEach((user) => { %>
+					<li><%= user.email %> <%= user.role.name %></5></li>
+					<% }); %>
+				</ul>
+
+				<a href="/settings/user/create">Create New User</a>
+			</section>
+		</main>
+
+		<footer><%- include('../../partials/footer') %></footer>
+
+		<%- include('../../partials/scripts') %>
+	</body>
+</html>

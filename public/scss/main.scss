@@ -25,11 +25,18 @@ h6 {
 }
 
 section {
-	padding: 1em 25px;
+	padding: 1.5em 25px 1em 25px;
+
+	h2 {
+		margin-bottom: 1.5em;
+	}
 }
 
 // Import Auth Styles
 @import './auth.scss';
+
+// Import Header
+@import './header.scss';
 
 .form-group {
 	margin-bottom: 1.5em;
@@ -41,7 +48,8 @@ section {
 		margin-bottom: 5px;
 	}
 
-	input {
+	input,
+	select {
 		width: 100%;
 		height: 40px;
 		padding: 0 20px;
@@ -50,6 +58,7 @@ section {
 		background-color: transparent;
 		color: $white;
 		outline: none;
+		appearance: none;
 	}
 
 	textarea {

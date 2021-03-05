@@ -1,0 +1,127 @@
+// Import All Variables
+@import './variables.scss';
+
+header {
+	height: 70px;
+	padding: 0 25px;
+	border-bottom: 1px solid $sub-background-color;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	nav {
+		button {
+			position: relative;
+			width: 20px;
+			height: 30px;
+			cursor: pointer;
+			appearance: none;
+			border: none;
+			outline: none;
+			background-color: transparent;
+
+			span {
+				position: absolute;
+				height: 2px;
+				left: 0;
+				right: 0;
+				background-color: $white;
+				border-radius: 4px;
+
+				&:first-of-type {
+					transform: translateY(-5px);
+				}
+
+				&:last-of-type {
+					transform: translateY(5px);
+				}
+			}
+		}
+
+		ul {
+			position: absolute;
+			width: 80%;
+			height: 100%;
+			list-style: none;
+			background-color: $sub-background-color;
+			transform: translateX(-102%);
+			top: 0;
+			left: 0;
+			bottom: 0;
+			transition: 0.3s ease-in;
+			z-index: 1000;
+			align-items: flex-start;
+			box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
+
+			li {
+				border-bottom: 1px solid #2d2d2d;
+
+				a {
+					color: $white;
+					text-decoration: none;
+					justify-content: left !important;
+					font-size: 14px;
+					padding: 25px;
+					display: flex;
+					flex-direction: row;
+
+					svg {
+						margin-right: 1em;
+					}
+				}
+
+				&:last-of-type {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					border-top: 1px solid #2d2d2d;
+					border-bottom: none;
+				}
+			}
+
+			&.open-menu {
+				transform: translateY(0%);
+			}
+
+			.head {
+				height: 70px;
+				padding: 0 25px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				border-bottom: 1px solid #2d2d2d;
+
+				svg {
+					width: 18px;
+					height: 18px;
+					color: $white;
+				}
+
+				img {
+					height: 25px;
+				}
+			}
+		}
+	}
+
+	a {
+		height: 25px;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	a:last-of-type {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			color: $white;
+		}
+	}
+}

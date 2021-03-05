@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../../partials/head') %>
+	</head>
+	<body>
+		<header><%- include('../../partials/header') %></header>
+
+		<main>
+			<h2>Settings</h2>
+
+			<% if(authUser.role.name == 'Administrator') { %>
+			<a href="/settings/users">All Users</a>
+			<% } %>
+		</main>
+
+		<footer><%- include('../../partials/footer') %></footer>
+
+		<%- include('../../partials/scripts') %>
+	</body>
+</html>

@@ -14,6 +14,8 @@ const dbConnection = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_
 
 // Import Routes
 const authRoutes = require('./routes/authRoutes');
+const settingsRoutes = require('./routes/settingsRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 
 // Set Template Engine
 app.set('view engine', 'ejs');
@@ -35,17 +37,19 @@ mongoose.connect(
 	}
 );
 
-// Get Home Page
+// Get Projects Page
 app.get('/', verifyAuth, (req, res) => {
-	res.render('pages/home', { title: 'Home' });
+	res.render('pages/projects', { title: 'Projects' });
 });
 
 // Route Middlewares
 app.use(authRoutes);
+app.use(settingsRoutes);
+app.use(usersRoutes);
 
 // Show 404 Page if Page Doesn't Exists
 app.use((req, res, next) => {
-	res.status(404).send('This page does not exist!');
+	res.status(404).end();
 });
 
 // Start Server at Given Host and Port

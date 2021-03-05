@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	var menuBtn = document.querySelector('header nav button');
+	menuBtn.addEventListener('click', openMenu);
+
+	function openMenu() {
+		var nav = document.querySelector('header nav ul');
+		nav.classList.add('open-menu');
+	}
+
+	var closeBtn = document.querySelector('header nav ul svg');
+	closeBtn.addEventListener('click', closeMenu);
+
+	function closeMenu() {
+		var nav = document.querySelector('header nav ul');
+		nav.classList.remove('open-menu');
+	}
+</script>

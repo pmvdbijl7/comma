@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
 	{
 		role: {
-			type: mongoose.Schema.Types.ObjectId,
+			type: Schema.Types.ObjectId,
 			ref: 'Role',
+			required: true,
 		},
 		firstname: {
 			type: String,
@@ -27,7 +29,6 @@ const userSchema = new mongoose.Schema(
 		password: {
 			type: String,
 			minLength: 8,
-			maxLength: 1024,
 			required: true,
 		},
 	},

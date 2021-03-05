@@ -22,7 +22,10 @@ h6 {
 }
 
 section {
-  padding: 1em 25px;
+  padding: 1.5em 25px 1em 25px;
+}
+section h2 {
+  margin-bottom: 1.5em;
 }
 
 .auth-container {
@@ -43,6 +46,112 @@ section {
   text-align: center;
 }
 
+header {
+  height: 70px;
+  padding: 0 25px;
+  border-bottom: 1px solid #242629;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav button {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header nav button span {
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background-color: #fffffe;
+  border-radius: 4px;
+}
+header nav button span:first-of-type {
+  transform: translateY(-5px);
+}
+header nav button span:last-of-type {
+  transform: translateY(5px);
+}
+header nav ul {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  list-style: none;
+  background-color: #242629;
+  transform: translateX(-102%);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease-in;
+  z-index: 1000;
+  align-items: flex-start;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
+}
+header nav ul li {
+  border-bottom: 1px solid #2d2d2d;
+}
+header nav ul li a {
+  color: #fffffe;
+  text-decoration: none;
+  justify-content: left !important;
+  font-size: 14px;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+}
+header nav ul li a svg {
+  margin-right: 1em;
+}
+header nav ul li:last-of-type {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #2d2d2d;
+  border-bottom: none;
+}
+header nav ul.open-menu {
+  transform: translateY(0%);
+}
+header nav ul .head {
+  height: 70px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2d2d2d;
+}
+header nav ul .head svg {
+  width: 18px;
+  height: 18px;
+  color: #fffffe;
+}
+header nav ul .head img {
+  height: 25px;
+}
+header a {
+  height: 25px;
+}
+header a img {
+  height: 100%;
+}
+header a:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header a:last-of-type svg {
+  width: 20px;
+  height: 20px;
+  color: #fffffe;
+}
+
 .form-group {
   margin-bottom: 1.5em;
   display: flex;
@@ -52,7 +161,8 @@ section {
   font-size: 11px;
   margin-bottom: 5px;
 }
-.form-group input {
+.form-group input,
+.form-group select {
   width: 100%;
   height: 40px;
   padding: 0 20px;
@@ -61,6 +171,7 @@ section {
   background-color: transparent;
   color: #fffffe;
   outline: none;
+  appearance: none;
 }
 .form-group textarea {
   min-width: 100%;
