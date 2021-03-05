@@ -31,7 +31,12 @@ app.use(cookieParser());
 // Connect to Database
 mongoose.connect(
 	dbConnection,
-	{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+		useFindAndModify: true,
+	},
 	() => {
 		console.log('Succesfully Connected to Database!');
 	}

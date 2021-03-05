@@ -12,7 +12,13 @@
 
 				<ul>
 					<% users.forEach((user) => { %>
-					<li><%= user.email %> <%= user.role.name %></5></li>
+					<li>
+						<%= user.email %> <%= user.role.name %>
+						<a href="/settings/user/<%= user._id %>/edit">Edit</a>
+						<a href="/settings/user/<%= user._id %>/delete"
+							>Delete</a
+						>
+					</li>
 					<% }); %>
 				</ul>
 

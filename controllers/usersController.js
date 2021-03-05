@@ -16,6 +16,7 @@ const usersGet = (req, res) => {
 				// Load Page
 				User.find()
 					.populate('role')
+					.sort('role')
 					.then((users) => {
 						res.render('pages/users/view', {
 							title: 'Users',
@@ -79,8 +80,69 @@ const userCreatePost = async (req, res) => {
 		});
 };
 
+// Get Edit User Page
+const userEditGet = (req, res) => {
+	// Get Logged in User ID
+	const authUserId = req.user._id;
+
+	// Check if User has Permission
+	User.findById(authUserId)
+		.populate('role')
+		.then((authUser) => {
+			if (authUser.role.name == 'Administrator') {
+				User.findById(req.params.id)
+					.populate('role')
+					.then((user) => {
+						Role.find().then((roles) => {
+							console.log(user);
+
+							res.render('pages/users/edit', {
+								title: 'Edit User',
+								roles: roles,
+								user: user,
+							});
+						});
+					});
+			} else {
+				res.status(403).end();
+			}
+		});
+};
+
+// Edit User
+const userEditUpdate = (req, res) => {
+	console.log(req.body);
+};
+
+// Delete User
+const deleteUser = (req, res) => {
+	// Get Logged in User ID
+	const authUserId = req.user._id;
+
+	// Check if User has Permission
+	User.findById(authUserId)
+		.populate('role')
+		.then((authUser) => {
+			if (authUser.role.name == 'Administrator') {
+				// Check if Selected User is not the Admin User
+				if (req.params.id !== '603fb2456e699d258f6a3bd8') {
+					User.findByIdAndDelete(req.params.id).then((result) => {
+						res.redirect('/settings/users');
+					});
+				} else {
+					res.status(400).end();
+				}
+			} else {
+				res.status(403).end();
+			}
+		});
+};
+
 module.exports = {
 	usersGet,
 	userCreateGet,
 	userCreatePost,
+	userEditGet,
+	userEditUpdate,
+	deleteUser,
 };

@@ -13,4 +13,15 @@ router.post(
 	usersController.userCreatePost
 );
 
+// Edit User
+router.get('/settings/user/:id/edit', verifyAuth, usersController.userEditGet);
+router.put(
+	'/settings/user/:id/edit',
+	verifyAuth,
+	usersController.userEditUpdate
+);
+
+// Delete User
+router.get('/settings/user/:id/delete', verifyAuth, usersController.deleteUser);
+
 module.exports = router;
